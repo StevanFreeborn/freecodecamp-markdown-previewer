@@ -7,11 +7,11 @@ class Editor extends React.Component {
 
     render() {
         return (
-            <div className="editor">
-                <textarea 
-                    id="editor-text-area"
-                />
-            </div>
+            <textarea 
+                id="editor-text-area"
+                onChange={this.props.onChange}
+                value={this.props.markdown}
+            />
         );
     }
 }

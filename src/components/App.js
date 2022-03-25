@@ -8,6 +8,16 @@ import Toolbar from './Toolbar';
 class App extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      markdown: ''
+    }
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(e) {
+    this.setState({
+      markdown: e.target.value
+    })
   }
 
   render() {
@@ -22,7 +32,10 @@ class App extends React.Component {
             titleText="Editor"
           >
           </Toolbar>
-          <Editor>
+          <Editor
+            markdown={this.state.markdown}
+            onChange={this.handleChange}
+          >
           </Editor>
         </div>
         <div className="previewer-wrapper">
@@ -30,7 +43,9 @@ class App extends React.Component {
             titleText="Previewer"
           >
           </Toolbar>
-          <Previewer>
+          <Previewer
+            markdown={this.state.markdown}
+          >
           </Previewer>
         </div>
       </div>
