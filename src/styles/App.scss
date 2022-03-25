@@ -1,0 +1,23 @@
+.app-header {
+  background-color: #282c34;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 1vmin);
+  color: white;
+}
+
+.editor-previewer-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  .previewer-wrapper {
+    margin: 10px;
+  }
+  .editor-wrapper {
+    margin: 10px;
+  }
+}
