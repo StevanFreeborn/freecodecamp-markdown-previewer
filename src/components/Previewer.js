@@ -3,10 +3,6 @@ import { marked } from 'marked';
 import DOMPurify from 'dompurify';
 
 class Previewer extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         // set marked options so that carriage returns can be parsed as line breaks
         // when rendering the html.
