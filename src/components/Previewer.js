@@ -17,6 +17,12 @@ class Previewer extends React.Component {
             return `<a target="_blank" href="${href}">${text}</a>`
         }
 
+        // prevent dom purify from stripping out target attribute
+        // from links after parsing has occurred.
+        DOMPurify.setConfig({
+            ADD_ATTR: ['target']
+        });
+
         // sanitize html that was parsed from markdown text
         const html = DOMPurify.sanitize(
             marked(this.props.markdown, {renderer: renderer})
