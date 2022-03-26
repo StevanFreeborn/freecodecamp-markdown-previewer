@@ -12,9 +12,9 @@ class Toolbar extends React.Component {
         <FontAwesomeIcon icon={faKeyboard}/> :
         <FontAwesomeIcon icon={faCode}/>;
 
-        let maxMinIcon = (false) ?
-        <FontAwesomeIcon icon={faExpand}/> :
-        <FontAwesomeIcon icon={faCompress}/>;
+        let maxMinIcon = (this.props.maxState) ?
+        <FontAwesomeIcon icon={faCompress}/> :
+        <FontAwesomeIcon icon={faExpand}/>;
 
         return (
             <div className="toolbar">
@@ -22,7 +22,7 @@ class Toolbar extends React.Component {
                     {titleIcon} {this.props.titleText}
                 </div>
                 <div className="icons">
-                    {maxMinIcon}
+                    <i onClick={this.props.onClick}>{maxMinIcon}</i>
                 </div>
             </div>
         );
