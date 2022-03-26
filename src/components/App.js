@@ -1,6 +1,6 @@
-import { render } from '@testing-library/react';
 import React from 'react';
 import '../styles/App.scss';
+import "bootstrap/dist/css/bootstrap.min.css"
 import Editor from './Editor';
 import Previewer from './Previewer';
 import Toolbar from './Toolbar';
@@ -23,33 +23,41 @@ class App extends React.Component {
   render() {
     return (
       <div>
-      <header className="app-header">
-      <h1>Markdown Previewer</h1>
-      </header>
-      <div className="editor-previewer-wrapper">
-        <div class="editor-wrapper">
-          <Toolbar
-            titleText="Editor"
-          >
-          </Toolbar>
-          <Editor
-            markdown={this.state.markdown}
-            onChange={this.handleChange}
-          >
-          </Editor>
-        </div>
-        <div className="previewer-wrapper">
-          <Toolbar
-            titleText="Previewer"
-          >
-          </Toolbar>
-          <Previewer
-            markdown={this.state.markdown}
-          >
-          </Previewer>
+        <header className="app-header">
+          <h1><code>Markdown</code> Previewer</h1>
+        </header>
+        <div className="container-xxl">
+          <div className="row">
+          <div className="col-sm-6 order-sm-2">
+              <div class="preview-wrapper card">
+                <Toolbar
+                  titleText="Previewer"
+                >
+                </Toolbar>
+                <Previewer
+                  markdown={this.state.markdown}
+                >
+                </Previewer>
+              </div>
+            </div>
+            
+            <div class="col-sm-6 order-sm-1">
+              <div class="editor-wrapper card">
+                <Toolbar
+                  titleText="Editor"
+                >
+                </Toolbar>
+                <Editor
+                  markdown={this.state.markdown}
+                  onChange={this.handleChange}
+                >
+                </Editor>
+              </div>
+            </div>
+            
+          </div>
         </div>
       </div>
-    </div>
     );
   }
 }
