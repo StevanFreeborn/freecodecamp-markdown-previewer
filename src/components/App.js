@@ -61,12 +61,17 @@ class App extends React.Component {
     let previewerWrapperClassNames = "preview-wrapper custom-card";
     let previewerClasses = "previewer";
 
+    let toolbarClasses = "toolbar";
+
     if(this.state.isDarkMode)
     {
       appHeaderClassNames += " dark-mode";
       rowClasses += " light-mode";
       editorWrapperClassNames += " dark-mode";
       previewerWrapperClassNames += " dark-mode";
+      previewerClasses += " dark-mode previewer-dark-mode";
+      toolbarClasses += " toolbar-dark-mode";
+      textareaClasses += " dark-mode";
     }
 
     if(!this.state.isDarkMode)
@@ -75,6 +80,9 @@ class App extends React.Component {
       rowClasses += " dark-mode";
       editorWrapperClassNames += " light-mode";
       previewerWrapperClassNames += " light-mode";
+      previewerClasses += " light-mode previewer-light-mode";
+      toolbarClasses += " toolbar-light-mode";
+      textareaClasses += " light-mode";
     }
 
     if(this.state.isEditorMaximized)
@@ -117,6 +125,7 @@ class App extends React.Component {
                   titleText="Previewer"
                   onClick={this.handlePreviewMaximize}
                   maxState={this.state.isPreviewMaximized}
+                  toolbarClasses={toolbarClasses}
                 >
                 </Toolbar>
                 <Previewer
@@ -133,6 +142,7 @@ class App extends React.Component {
                   titleText="Editor"
                   onClick={this.handleEditorMaximize}
                   maxState={this.state.isEditorMaximized}
+                  toolbarClasses={toolbarClasses}
                 >
                 </Toolbar>
                 <Editor

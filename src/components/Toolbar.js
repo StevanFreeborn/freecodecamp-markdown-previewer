@@ -17,7 +17,7 @@ class Toolbar extends React.Component {
         <FontAwesomeIcon icon={faExpand}/>;
 
         return (
-            <div className="toolbar">
+            <div className={this.props.toolbarClasses}>
                 <div className="title">
                     {titleIcon} {this.props.titleText}
                 </div>

@@ -59,14 +59,22 @@ $accentColor: #b83284;
     border-radius: 0.25rem;
   }
 
+  .toolbar-light-mode {
+    color: $primaryColor;
+    border-bottom: 1px solid $primaryColor;
+  }
+
+  .toolbar-dark-mode {
+    color: $secondaryColor;
+    border-bottom: 1px solid $secondaryColor;
+  }
+
   .toolbar {
     display: flex;
     flex-direction: row;
     align-items: center;
-    border-bottom: 1px solid $secondaryColor;
     padding: 10px;
-    color: $secondaryColor;
-
+    
     .icons {
       margin-left: auto;
     }
@@ -87,8 +95,6 @@ $accentColor: #b83284;
       resize: none;
       padding: 10px;
       border: none;
-      background-color: $primaryColor;
-      color: $secondaryColor;
       font-family: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
     }
 
@@ -115,9 +121,20 @@ $accentColor: #b83284;
     .previewer {
       padding: 10px;
       height: 80vh;
-      color: $secondaryColor;
       overflow: auto;
+    }
 
+    @media only screen and (max-width: 576px) {
+      .previewer {
+        height: 40vh;
+      }
+      .previewer-mobile-max {
+        height: 85vh;
+      }
+    }
+
+    .previewer-dark-mode {
+      
       blockquote {
         border-left: 3px solid $accentColor;
         color: $accentColor;
@@ -170,15 +187,59 @@ $accentColor: #b83284;
       }
     }
 
-    @media only screen and (max-width: 576px) {
-      .previewer {
-        height: 40vh;
+    .previewer-light-mode {
+      
+      blockquote {
+        border-left: 3px solid $accentColor;
+        color: $accentColor;
+        padding-left: 5px;
+        margin-left: 25px;
       }
-      .previewer-mobile-max {
-        height: 85vh;
+    
+      > p > code {
+        padding: 3px;
+      }
+    
+      code {
+        background: $primaryColor;
+        font-size: 0.875rem;
+        font-weight: bold;
+        color: $secondaryColor;
+      }
+    
+      pre {
+        display: block;
+        overflow: auto;
+        background: $primaryColor;
+        padding: 5px;
+        line-height: 1.2;
+      }
+    
+      h1 {
+        border-bottom: 2px solid $primaryColor;
+      }
+    
+      h2 {
+        border-bottom: 1px solid $primaryColor;
+      }
+    
+      table {
+        border-collapse: collapse;
+      }
+    
+      td,
+      th {
+        border: 2px solid $primaryColor;
+        padding-left: 5px;
+        padding-right: 5px;
+      }
+    
+      img {
+        display: block;
+        max-width: 90%;
+        margin: 2rem auto;
       }
     }
 
   }
-
 }
