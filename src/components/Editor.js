@@ -7,6 +7,7 @@ class Editor extends React.Component {
                 id="editor-text-area"
                 onChange={this.props.onChange}
                 value={this.props.markdown}
+                className={this.props.classes}
             />
         );
     }

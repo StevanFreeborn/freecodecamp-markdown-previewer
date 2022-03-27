@@ -4,6 +4,9 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import Editor from './Editor';
 import Previewer from './Previewer';
 import Toolbar from './Toolbar';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleHalfStroke } from '@fortawesome/free-solid-svg-icons';
+
 
 class App extends React.Component {
   constructor(props) {
@@ -11,11 +14,13 @@ class App extends React.Component {
     this.state = {
       markdown: '',
       isEditorMaximized: false,
-      isPreviewMaximized: false
+      isPreviewMaximized: false,
+      isDarkMode: true
     }
     this.handleChange = this.handleChange.bind(this);
     this.handlePreviewMaximize = this.handlePreviewMaximize.bind(this);
     this.handleEditorMaximize = this.handleEditorMaximize.bind(this);
+    this.handleDarkMode = this.handleDarkMode.bind(this);
   }
 
   handleChange(e) {
@@ -36,20 +41,78 @@ class App extends React.Component {
     });
   }
 
+  handleDarkMode(){
+    this.setState({
+      isDarkMode: !this.state.isDarkMode
+    });
+  }
+
   render() {
+
+    let appHeaderClassNames = "app-header";
+
+    let rowClasses = "row";
+
+    let editorDivClassNames = "col-sm-6 order-sm-1";
+    let editorWrapperClassNames = "editor-wrapper custom-card";
+    let textareaClasses = "";
+
+    let previewDivClassNames = "col-sm-6 order-sm-2";
+    let previewerWrapperClassNames = "preview-wrapper custom-card";
+    let previewerClasses = "previewer";
+
+    if(this.state.isDarkMode)
+    {
+      appHeaderClassNames += " dark-mode";
+      rowClasses += " light-mode";
+      editorWrapperClassNames += " dark-mode";
+      previewerWrapperClassNames += " dark-mode";
+    }
+
+    if(!this.state.isDarkMode)
+    {
+      appHeaderClassNames += " light-mode";
+      rowClasses += " dark-mode";
+      editorWrapperClassNames += " light-mode";
+      previewerWrapperClassNames += " light-mode";
+    }
+
+    if(this.state.isEditorMaximized)
+    {
+      editorDivClassNames = "col-12";
+      textareaClasses = "editor-max";
+      previewDivClassNames = "hidden";
+    }
+
+    if(this.state.isPreviewMaximized)
+    {
+      editorDivClassNames = "hidden";
+      previewDivClassNames = "col-12";
+      previewerClasses += " previewer-mobile-max";
+    }
+
     return (
       <div>
 
-        <header className="app-header">
-          <h1><code>Markdown</code> Previewer</h1>
+        <header className={appHeaderClassNames}>
+          <div className="header-title">
+            <h1><code>Markdown</code> Previewer</h1>
+          </div>
+          <div className="icons">
+            <i
+              onClick={this.handleDarkMode}
+            >
+              <FontAwesomeIcon icon={faCircleHalfStroke} />
+            </i>
+          </div>
         </header>
 
         <div className="container-xxl">
 
-          <div className="row">
+          <div className={rowClasses}>
 
-          <div className="col-sm-6 order-sm-2">
-              <div className="preview-wrapper card">
+          <div className={previewDivClassNames}>
+              <div className={previewerWrapperClassNames}>
                 <Toolbar
                   titleText="Previewer"
                   onClick={this.handlePreviewMaximize}
@@ -58,13 +121,14 @@ class App extends React.Component {
                 </Toolbar>
                 <Previewer
                   markdown={this.state.markdown}
+                  classes={previewerClasses}
                 >
                 </Previewer>
               </div>
             </div>
             
-            <div className="col-sm-6 order-sm-1">
-              <div className="editor-wrapper card">
+            <div className={editorDivClassNames}>
+              <div className={editorWrapperClassNames}>
                 <Toolbar
                   titleText="Editor"
                   onClick={this.handleEditorMaximize}
@@ -74,6 +138,7 @@ class App extends React.Component {
                 <Editor
                   markdown={this.state.markdown}
                   onChange={this.handleChange}
+                  classes={textareaClasses}
                 >
                 </Editor>
               </div>
