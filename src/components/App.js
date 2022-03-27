@@ -77,7 +77,6 @@ class App extends React.Component {
     if(!this.state.isDarkMode)
     {
       appHeaderClassNames += " light-mode";
-      rowClasses += " dark-mode";
       editorWrapperClassNames += " light-mode";
       previewerWrapperClassNames += " light-mode";
       previewerClasses += " light-mode previewer-light-mode";
@@ -88,7 +87,7 @@ class App extends React.Component {
     if(this.state.isEditorMaximized)
     {
       editorDivClassNames = "col-12";
-      textareaClasses = "editor-max";
+      textareaClasses += " editor-max";
       previewDivClassNames = "hidden";
     }
 
@@ -119,7 +118,7 @@ class App extends React.Component {
 
           <div className={rowClasses}>
 
-          <div className={previewDivClassNames}>
+            <div className={previewDivClassNames}>
               <div className={previewerWrapperClassNames}>
                 <Toolbar
                   titleText="Previewer"
@@ -135,7 +134,7 @@ class App extends React.Component {
                 </Previewer>
               </div>
             </div>
-            
+
             <div className={editorDivClassNames}>
               <div className={editorWrapperClassNames}>
                 <Toolbar
@@ -153,7 +152,7 @@ class App extends React.Component {
                 </Editor>
               </div>
             </div>
-            
+
           </div>
 
         </div>
