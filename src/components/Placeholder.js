@@ -9,6 +9,7 @@ You can create [links](https://github.com/StevanFreeborn).
 You can format code.
 \`\`\`
 // comment
+
 function HelloWorld() {
     return console.log("Hello World!");
 }
@@ -25,5 +26,5 @@ Feel **free** to quote people too.
 > Never, never, never give up. 
 -Winston Churchill
 
-![Winston Churchill](images/winston-churchill)
+![Winston Churchill](https://www.historic-uk.com/wp-content/uploads/2018/11/churchill-1366x703.jpg)
 `;
