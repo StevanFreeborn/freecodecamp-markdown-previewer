@@ -1,3 +1,3 @@
-# Getting Started with Create React App
+# freecodecamp-markdown-previewer
 
 A markdown previewer built as part of the freeCodeCamp Front End Development Libraries Certification
