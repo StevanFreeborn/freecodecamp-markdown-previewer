@@ -49,6 +49,8 @@ class App extends React.Component {
   }
 
   render() {
+
+    // set default element classes
     let appHeaderClassNames = "app-header";
 
     let rowClasses = "row";
@@ -63,6 +65,7 @@ class App extends React.Component {
 
     let toolbarClasses = "toolbar";
 
+    // adjust element classes based on state
     if(this.state.isDarkMode)
     {
       appHeaderClassNames += " dark-mode";
