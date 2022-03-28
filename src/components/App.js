@@ -117,7 +117,7 @@ class App extends React.Component {
           </div>
         </header>
 
-        <div className="container-xxl">
+        <div className="container-fluid">
 
           <div className={rowClasses}>
 
