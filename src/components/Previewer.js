@@ -30,7 +30,7 @@ class Previewer extends React.Component {
 
         return (
             <div
-                id="previewer"
+                id="preview"
                 className={this.props.classes}
                 dangerouslySetInnerHTML={{
                     __html: html
