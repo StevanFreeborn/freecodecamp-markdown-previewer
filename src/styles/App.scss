@@ -33,7 +33,7 @@ $accentColor: #b83284;
 
   .icons {
     margin-left: auto;
-    margin-right: 15px;
+    margin-right: 60px;
   }
 
   .icons:hover{
@@ -45,7 +45,7 @@ $accentColor: #b83284;
 
 .container-xxl {
   margin: 0px;
-  height: 100vh;
+  height: 100%;
 
   .custom-card {
     margin: 10px 0;
@@ -89,9 +89,10 @@ $accentColor: #b83284;
   
   .editor-wrapper {
     padding: 10px;
+    height: 100vh;
     
     textarea {
-      height: 100vh;
+      height: 100%;
       resize: none;
       padding: 10px;
       border: none;
@@ -103,30 +104,30 @@ $accentColor: #b83284;
     }
 
     @media only screen and (max-width: 576px) {
-      textarea {
+      .editor-wrapper {
         height: 50vh;
       }
 
       .editor-max {
-        height: 100vh;
+        height: 100%;
       }
 
     }
-
   }
   
   .preview-wrapper {
     padding: 10px;
+    height: 100vh;
   
     .previewer {
       padding: 10px;
-      height: 100vh;
+      height: 100%;
       overflow: auto;
     }
 
     @media only screen and (max-width: 576px) {
-      .previewer {
-        height: 50vh;
+      .previewer-wrapper {
+        height: 50%;
       }
       .previewer-mobile-max {
         height: 100vh;
@@ -240,6 +241,5 @@ $accentColor: #b83284;
         margin: 2rem auto;
       }
     }
-
   }
 }
