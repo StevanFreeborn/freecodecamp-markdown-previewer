@@ -45,7 +45,7 @@ $accentColor: #b83284;
 
 .container-xxl {
   margin: 0px;
-  height: 80vh;
+  height: 100vh;
 
   .custom-card {
     margin: 10px 0;
@@ -91,7 +91,7 @@ $accentColor: #b83284;
     padding: 10px;
     
     textarea {
-      height: 80vh;
+      height: 100vh;
       resize: none;
       padding: 10px;
       border: none;
@@ -104,11 +104,11 @@ $accentColor: #b83284;
 
     @media only screen and (max-width: 576px) {
       textarea {
-        height: 40vh;
+        height: 50vh;
       }
 
       .editor-max {
-        height: 85vh;
+        height: 100vh;
       }
 
     }
@@ -120,16 +120,16 @@ $accentColor: #b83284;
   
     .previewer {
       padding: 10px;
-      height: 80vh;
+      height: 100vh;
       overflow: auto;
     }
 
     @media only screen and (max-width: 576px) {
       .previewer {
-        height: 40vh;
+        height: 50vh;
       }
       .previewer-mobile-max {
-        height: 85vh;
+        height: 100vh;
       }
     }
 
