@@ -6,13 +6,14 @@ import Previewer from './Previewer';
 import Toolbar from './Toolbar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleHalfStroke } from '@fortawesome/free-solid-svg-icons';
+import { placeholderText } from './Placeholder';
 
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      markdown: '',
+      markdown: placeholderText,
       isEditorMaximized: false,
       isPreviewMaximized: false,
       isDarkMode: true
@@ -48,7 +49,6 @@ class App extends React.Component {
   }
 
   render() {
-
     let appHeaderClassNames = "app-header";
 
     let rowClasses = "row";
